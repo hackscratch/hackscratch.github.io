@@ -1,29 +1,28 @@
 <html>
 <head>
     <title>Test</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
-        
-    </script>
-        <script>
-            function search() {
-                var input, filter, ul, li, a, i, tvalue;
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/postscribe/2.0.8/postscribe.min.js"></script>
+    <script>
+        function search() {
+            var input, filter, ul, li, a, i, tvalue;
             input = document.getElementById('searchbox');
             filter = input.value.toUpperCase();
             ul = document.getElementById("posts");
             li = ul.getElementsByTagName('li');
 
             // Loop through all list items, and hide those who don't match the search query
-                for (i = 0; i < li.length; i++) {
+            for (i = 0; i < li.length; i++) {
                 a = li[i].getElementsByTagName("a")[0];
-            tvalue = a.textContent || a.innerText;
-                    if (tvalue.toUpperCase().indexOf(filter) > -1) {
-                li[i].style.display = "";
-            } else {
-                li[i].style.display = "none";
+                tvalue = a.textContent || a.innerText;
+                if (tvalue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
             }
         }
-}
-            
+
     </script>
     <script>
         $(function () {
