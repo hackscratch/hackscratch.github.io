@@ -20,12 +20,18 @@
                 }
             }
         }
+        $(document).ready(function () {
+            // your on click function here
+            $('a').click(function () {
+                $('.content').load($(this).attr('href'));
+                return false;
+            });
+        });
     </script>
     <style>
         body {
             background-color: black;
         }
-
         a:link {
             color: white;
             background-color: transparent;
@@ -69,7 +75,7 @@
         <input type="text" id="searchbox" onkeyup="search()" placeholder="search posts" size="10">
         <hr>
     </div>
-    <div class="content" id="content">dgdsgf</div>
+    <div class="content" id="content"></div>
     <div class="links">
     <ul id="posts" style="list-style-type:none;margin:0;padding:0;">
         
