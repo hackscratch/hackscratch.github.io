@@ -20,14 +20,9 @@
                 }
             }
         }
-        $(document).ready(function () {
-            // your on click function here
-            
-            $('a').click(function (event) {
-                event.preventDefault();
-                $('.content').load($(this).attr('href'));
-            });
-        });
+        function load_content() {
+            document.getElementById("content").innerHTML = '<object type="type/html" data='+this.href+'></object>';
+        }
     </script>
     <style>
         body {
@@ -81,13 +76,13 @@
     <ul id="posts" style="list-style-type:none;margin:0;padding:0;">
         
 
-<li><a href="/posts/StackEdit Example %23random.html">StackEdit Example #random</a></li>
-<li><a href="/posts/Post Template.html">Post Template</a></li>
-<li><a href="/posts/Another Test %23ok.html">Another Test #ok</a></li>
-<li><a href="/posts/About %23about [].html">About #about []</a></li>
-<li><a href="/posts/testing %23test.html">testing #test</a></li>
-<li><a href="/posts/[Download All User Gists] Download All User Gists to Local Directory in C%23 %23gists.html">[Download All User Gists] Download All User Gists to Local Directory in C# #gists</a></li>
-<li><a href="/posts/[Connect to Autodesk Inventor - Silent Operation] %23inventor.html">[Connect to Autodesk Inventor - Silent Operation] #inventor</a></li>
+<li><a href="/posts/StackEdit Example %23random.html" onclick="load_content">StackEdit Example #random</a></li>
+<li><a href="/posts/Post Template.html" onclick="load_content">Post Template</a></li>
+<li><a href="/posts/Another Test %23ok.html" onclick="load_content">Another Test #ok</a></li>
+<li><a href="/posts/About %23about [].html" onclick="load_content">About #about []</a></li>
+<li><a href="/posts/testing %23test.html" onclick="load_content">testing #test</a></li>
+<li><a href="/posts/[Download All User Gists] Download All User Gists to Local Directory in C%23 %23gists.html" onclick="load_content">[Download All User Gists] Download All User Gists to Local Directory in C# #gists</a></li>
+<li><a href="/posts/[Connect to Autodesk Inventor - Silent Operation] %23inventor.html" onclick="load_content">[Connect to Autodesk Inventor - Silent Operation] #inventor</a></li>
 </ul>
 </div>
 </body>
