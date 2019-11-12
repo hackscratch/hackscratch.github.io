@@ -2,13 +2,7 @@
 <head>
     <title>Test</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
-        $(function () {
-            $(".links li a").click(function (e) {
-                e.preventDefault(); //To prevent the default anchor tag behaviour
-                var url = this.href;
-                $(".content").load(url);
-            });
-        });
+        
     </script>
         <script>
             function search() {
@@ -30,6 +24,15 @@
         }
 }
             
+    </script>
+    <script>
+        $(function () {
+            $(".links li a").click(function (e) {
+                e.preventDefault(); //To prevent the default anchor tag behaviour
+                var url = this.href;
+                $(".content").load(url);
+            });
+        });
     </script>
     <style>
         body {
