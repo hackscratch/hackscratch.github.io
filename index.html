@@ -1,8 +1,8 @@
 <html>
 <head>
     <title>Test</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/postscribe/2.0.8/postscribe.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/postscribe/2.0.8/postscribe.min.js"></script>-->
     <script>
         function search() {
             var input, filter, ul, li, a, i, tvalue;
@@ -22,21 +22,21 @@
                 }
             }
         }
-        function loadGist(element, gistId) {
-            var callbackName = "gist_callback";
-            window[callbackName] = function (gistData) {
-                delete window[callbackName];
-                var html = '<link rel="stylesheet" href="' + escapeHtml(gistData.stylesheet) + '"></link>';
-                html += gistData.div;
-                element.innerHTML = html;
-                script.parentNode.removeChild(script);
-            };
-            var script = document.createElement("script");
-            script.setAttribute("src", "https://gist.github.com/" + gistId + ".json?callback=" + callbackName);
-            document.body.appendChild(script);
-        }
+        //function loadGist(element, gistId) {
+        //    var callbackName = "gist_callback";
+        //    window[callbackName] = function (gistData) {
+        //        delete window[callbackName];
+        //        var html = '<link rel="stylesheet" href="' + escapeHtml(gistData.stylesheet) + '"></link>';
+        //        html += gistData.div;
+        //        element.innerHTML = html;
+        //        script.parentNode.removeChild(script);
+        //    };
+        //    var script = document.createElement("script");
+        //    script.setAttribute("src", "https://gist.github.com/" + gistId + ".json?callback=" + callbackName);
+        //    document.body.appendChild(script);
+        //}
     </script>
-    <script>
+    <!--<script>
         $(function () {
             $(".links li a").click(function (e) {
                 e.preventDefault(); //To prevent the default anchor tag behaviour
@@ -45,39 +45,39 @@
             });
         });
 
-    </script>
+    </script>-->
     
     <style>
         body {
-            background-color: black;
+            background-color: white;
         }
 
         a:link {
-            color: white;
+            color: blue;
             background-color: transparent;
             text-decoration: none;
         }
 
         a:visited {
-            color: white;
+            color: blue;
             background-color: transparent;
             text-decoration: none;
         }
 
         a:hover {
-            color: green;
+            color: blue;
             background-color: transparent;
             text-decoration: underline;
         }
 
         a:active {
-            color: white;
+            color: blue;
             background-color: transparent;
             text-decoration: underline;
         }
 
         hr {
-            color: white;
+            color: black;
         }
 
         .content {
@@ -97,18 +97,20 @@
         <input type="text" id="searchbox" onkeyup="search()" placeholder="search posts" size="10">
         <hr>
     </div>
-    <div class="content" id="content"></div>
+    <div class="content">
+        <iframe name="gist"></iframe>
+    </div>
     <div class="links">
     <ul id="posts" style="list-style-type:none;margin:0;padding:0;">
         
 
-<li><a href="/posts/StackEdit Example %23random.html">StackEdit Example #random</a></li>
-<li><a href="/posts/Post Template.html">Post Template</a></li>
-<li><a href="/posts/Another Test %23ok.html">Another Test #ok</a></li>
-<li><a href="/posts/About %23about [].html">About #about []</a></li>
-<li><a href="/posts/testing %23test.html">testing #test</a></li>
-<li><a href="/posts/[Download All User Gists] Download All User Gists to Local Directory in C%23 %23gists.html">[Download All User Gists] Download All User Gists to Local Directory in C# #gists</a></li>
-<li><a href="/posts/[Connect to Autodesk Inventor - Silent Operation] %23inventor.html">[Connect to Autodesk Inventor - Silent Operation] #inventor</a></li>
+<li><a href="/posts/StackEdit Example %23random.html" target="gist">StackEdit Example #random</a></li>
+<li><a href="/posts/Post Template.html" target="gist">Post Template</a></li>
+<li><a href="/posts/Another Test %23ok.html" target="gist">Another Test #ok</a></li>
+<li><a href="/posts/About %23about [].html" target="gist">About #about []</a></li>
+<li><a href="/posts/testing %23test.html" target="gist">testing #test</a></li>
+<li><a href="/posts/[Download All User Gists] Download All User Gists to Local Directory in C%23 %23gists.html" target="gist">[Download All User Gists] Download All User Gists to Local Directory in C# #gists</a></li>
+<li><a href="/posts/[Connect to Autodesk Inventor - Silent Operation] %23inventor.html" target="gist">[Connect to Autodesk Inventor - Silent Operation] #inventor</a></li>
 </ul>
 </div>
 </body>
